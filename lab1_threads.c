@@ -1,6 +1,17 @@
 /*
 CECS 326 Lab 1 - Threads in C
 
+Question 1:
+The software can create and manage mutlple threads inside a single process by using the pthreads library. The main thread of this program
+starts running in main() and uses pthread_create() to create a second thread. The worker_thread() method is executed concurrently by the second
+thread and the main thread. The main thread transmits a cancellation request to the worker thread by executing pthread_cancel() when the user
+hits Enter. The program then waits until the worker thread has completely terminated and its resources have been elimnated by pthread_join()
+before continuing.
+
+Qeustions 2:
+The worker thread keeps displaying messages while the main thread waits for keyboard input. The worker thread is able to function even when the
+main thread is halted while it awaits input (get(char()). The worker thread continues to execute until the main thread stops it because it sleeps
+for three seconds, wakes up, prints a message, and repeats.
 */
 
 
